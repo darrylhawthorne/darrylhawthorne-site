@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Light, a maker project by Darryl Hawthorne</title>
+<meta name="description" content="A lantern that glows brighter as you walk toward it.">
+<link rel="canonical" href="https://darrylhawthorne.com/street-light">
+<meta property="og:title" content="Street Light, a maker project by Darryl Hawthorne">
+<meta property="og:description" content="A lantern that glows brighter as you walk toward it.">
+<meta property="og:url" content="https://darrylhawthorne.com/street-light">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F6F6}
+a{color:#111113}a:hover{color:#9A4F08}
+.dh{font-family:Inter,system-ui,sans-serif;color:#111113;-webkit-font-smoothing:antialiased}
+.disp{font-family:'Bricolage Grotesque',Inter,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.narrow{max-width:760px}
+.navlink{text-decoration:none;font-size:15px;font-weight:500;padding:12px 4px;position:relative}
+.navlink::after{content:'';position:absolute;left:4px;right:4px;bottom:6px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.navlink:hover::after,.navlink:focus-visible::after{transform:scaleX(1)}
+a:focus-visible{outline:3px solid #9A4F08;outline-offset:3px}
+.eyebrow{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9A4F08}
+.h2{margin:0;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em;line-height:1.05;font-weight:650}
+.body{font-size:19px;line-height:1.6;color:#3D3E43;margin:20px 0 0}
+.sec{padding-top:128px}
+.prog{position:fixed;top:0;left:0;right:0;height:4px;background:#9A4F08;transform-origin:left;transform:scaleX(0);z-index:5}
+.fade{animation:fadeup .9s cubic-bezier(.2,.75,.1,1) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0}
+.trio figure{margin:0}
+.trio img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.trio figcaption{margin-top:12px;font-size:15px;line-height:1.45;color:#3D3E43}
+.trio figcaption b{display:block;color:#111113;font-size:16px;margin-bottom:2px}
+.hero-photo{display:block;width:100%;height:clamp(380px,48vw,620px);object-fit:cover;object-position:50% 55%}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;list-style:none;margin:0;padding:0}
+.steps li{padding-top:20px;border-top:2px solid #9A4F08}
+.steps .num{margin:0 0 10px;font:700 13px Inter,sans-serif;letter-spacing:.08em;color:#9A4F08}
+.steps b{display:block;font-size:18px}
+.steps span{display:block;margin-top:6px;font-size:16px;line-height:1.55;color:#3D3E43}
+.quote{margin:0;font-size:clamp(28px,3.4vw,46px);line-height:1.18;letter-spacing:-0.02em;font-weight:600}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;color:#F6F6F6;padding:72px 0}
+.next:hover{color:#F6F6F6}.next:hover .arrow{transform:translateX(10px)}
+.arrow{display:inline-block;transition:transform .35s}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+.glow{animation:glow linear both;animation-timeline:view();animation-range:entry 10% cover 50%}
+@keyframes glow{from{filter:brightness(.35) saturate(.6)}to{filter:none}}
+.prog{animation:prog linear both;animation-timeline:scroll(root)}
+@keyframes prog{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+@media (max-width:640px){.wrap{padding:0 20px}.trio{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="font-family: sans-serif; padding: 40px">This site needs JavaScript turned on. You can reach Darryl at <a href="mailto:darrylh1301@gmail.com">darrylh1301@gmail.com</a>.</p></noscript></div>
+<script type="module" src="/js/street-light.js"></script>
+</body>
+</html>

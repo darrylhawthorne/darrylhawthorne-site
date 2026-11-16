@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept ideas by Darryl Hawthorne</title>
+<meta name="description" content="Instant Assist and Mood Board, two concept ideas.">
+<link rel="canonical" href="https://darrylhawthorne.com/concepts">
+<meta property="og:title" content="Concept ideas by Darryl Hawthorne">
+<meta property="og:description" content="Instant Assist and Mood Board, two concept ideas.">
+<meta property="og:url" content="https://darrylhawthorne.com/concepts">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F6F6}
+a{color:#111113}a:hover{color:#4B3FB8}
+.dh{font-family:Inter,system-ui,sans-serif;color:#111113;-webkit-font-smoothing:antialiased}
+.disp{font-family:'Bricolage Grotesque',Inter,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.navlink{text-decoration:none;font-size:15px;font-weight:500;padding:12px 4px;position:relative}
+.navlink::after{content:'';position:absolute;left:4px;right:4px;bottom:6px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.navlink:hover::after,.navlink:focus-visible::after{transform:scaleX(1)}
+a:focus-visible,button:focus-visible{outline:3px solid #4B3FB8;outline-offset:3px}
+.eyebrow{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4B3FB8}
+.fade{animation:fadeup .9s cubic-bezier(.2,.75,.1,1) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.concept{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:48px;align-items:center}
+.concept .stage{grid-column:span 6;display:flex;flex-direction:column;align-items:center;gap:20px}
+.concept .copy{grid-column:span 6}
+.concept.flip .stage{order:2}
+.stage video{display:block;width:min(100%,380px);height:auto}
+.ctl{min-height:44px;padding:0 6px;border:0;border-bottom:2px solid #111113;background:transparent;color:#111113;font:600 14px Inter,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.ctl:hover{color:#4B3FB8;border-color:#4B3FB8}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;color:#F6F6F6;padding:72px 0}
+.next:hover{color:#F6F6F6}.next:hover .arrow{transform:translateX(10px)}
+.arrow{display:inline-block;transition:transform .35s}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-width:900px){.concept{gap:28px}.concept .stage,.concept .copy{grid-column:1 / -1}.concept.flip .stage{order:0}}
+@media (max-width:640px){.wrap{padding:0 20px}}
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="font-family: sans-serif; padding: 40px">This site needs JavaScript turned on. You can reach Darryl at <a href="mailto:darrylh1301@gmail.com">darrylh1301@gmail.com</a>.</p></noscript></div>
+<script type="module" src="/js/concepts.js"></script>
+</body>
+</html>

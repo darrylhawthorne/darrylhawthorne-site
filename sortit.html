@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sortit, a case study by Darryl Hawthorne</title>
+<meta name="description" content="How I designed and launched Sortit, an on device photo cleaner for iOS, from Figma to the App Store in three months.">
+<link rel="canonical" href="https://darrylhawthorne.com/sortit">
+<meta property="og:title" content="Sortit, a case study by Darryl Hawthorne">
+<meta property="og:description" content="How I designed and launched Sortit, an on device photo cleaner for iOS, from Figma to the App Store in three months.">
+<meta property="og:url" content="https://darrylhawthorne.com/sortit">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F6F6}
+a{color:#111113}a:hover{color:#1D4FC4}
+.dh{font-family:Inter,system-ui,sans-serif;color:#111113;-webkit-font-smoothing:antialiased}
+.disp{font-family:'Bricolage Grotesque',Inter,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.narrow{max-width:760px}
+.navlink{text-decoration:none;font-size:15px;font-weight:500;padding:12px 4px;position:relative}
+.navlink::after{content:'';position:absolute;left:4px;right:4px;bottom:6px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.navlink:hover::after,.navlink:focus-visible::after{transform:scaleX(1)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid #1D4FC4;outline-offset:3px}
+.eyebrow{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1D4FC4}
+.h2{margin:0;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em;line-height:1.05;font-weight:650}
+.body{font-size:19px;line-height:1.6;color:#3D3E43;margin:20px 0 0}
+.sec{padding-top:128px}
+.prog{position:fixed;top:0;left:0;right:0;height:4px;background:#1D4FC4;transform-origin:left;transform:scaleX(0);z-index:5}
+.fade{animation:fadeup .9s cubic-bezier(.2,.75,.1,1) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.hero video{display:block;width:min(100%,330px);height:auto;margin:0 auto}
+.store{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 4px;text-decoration:none;font-weight:600;font-size:16px;border-bottom:2px solid #111113}
+.store:hover{color:#1D4FC4;border-color:#1D4FC4}
+.ctl{min-height:44px;padding:0 6px;border:0;border-bottom:2px solid #111113;background:transparent;color:#111113;font:600 14px Inter,sans-serif;cursor:pointer;margin-top:16px}
+.ctl:hover{color:#1D4FC4;border-color:#1D4FC4}
+.gal{overflow-x:auto;padding:8px 0 24px}
+.track{display:flex;gap:24px;width:max-content;padding:0 40px}
+.track img{display:block;height:clamp(380px,46vw,560px);width:auto}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;list-style:none;margin:0;padding:0}
+.three li{padding-top:20px;border-top:2px solid #1D4FC4}
+.three b{display:block;font-size:19px}
+.three span{display:block;margin-top:8px;font-size:16px;line-height:1.55;color:#3D3E43}
+.safe{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px}
+.safe div{padding-top:20px;border-top:1px solid #111113}
+.safe h3{margin:0;font-size:19px}
+.safe p{margin:8px 0 0;font-size:16px;line-height:1.55;color:#3D3E43}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;color:#F6F6F6;padding:72px 0}
+.next:hover{color:#F6F6F6}.next:hover .arrow{transform:translateX(10px)}
+.arrow{display:inline-block;transition:transform .35s}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+.gal{overflow:hidden;view-timeline-name:--gal}
+.track{animation:slide linear both;animation-timeline:--gal;animation-range:cover 10% cover 90%}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(calc(-100% + 100vw))}}
+.prog{animation:prog linear both;animation-timeline:scroll(root)}
+@keyframes prog{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.gal{overflow-x:auto!important}}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.three{grid-template-columns:1fr}.safe{grid-template-columns:1fr}}
+@media (max-width:640px){.wrap{padding:0 20px}.track{padding:0 20px}}
+.rnd{border-radius:clamp(22px,3.2vw,44px);overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="font-family: sans-serif; padding: 40px">This site needs JavaScript turned on. You can reach Darryl at <a href="mailto:darrylh1301@gmail.com">darrylh1301@gmail.com</a>.</p></noscript></div>
+<script type="module" src="/js/sortit.js"></script>
+</body>
+</html>

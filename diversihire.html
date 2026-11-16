@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiversiHire, a case study by Darryl Hawthorne</title>
+<meta name="description" content="A job search app for people who read and communicate differently.">
+<link rel="canonical" href="https://darrylhawthorne.com/diversihire">
+<meta property="og:title" content="DiversiHire, a case study by Darryl Hawthorne">
+<meta property="og:description" content="A job search app for people who read and communicate differently.">
+<meta property="og:url" content="https://darrylhawthorne.com/diversihire">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F6F6}
+a{color:#111113}a:hover{color:#2F6B57}
+.dh{font-family:Inter,system-ui,sans-serif;color:#111113;-webkit-font-smoothing:antialiased}
+.disp{font-family:'Bricolage Grotesque',Inter,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.narrow{max-width:760px}
+.navlink{text-decoration:none;font-size:15px;font-weight:500;padding:12px 4px;position:relative}
+.navlink::after{content:'';position:absolute;left:4px;right:4px;bottom:6px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.navlink:hover::after,.navlink:focus-visible::after{transform:scaleX(1)}
+a:focus-visible,[tabindex]:focus-visible{outline:3px solid #2F6B57;outline-offset:3px}
+.eyebrow{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#2F6B57}
+.h2{margin:0;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em;line-height:1.05;font-weight:650}
+.body{font-size:19px;line-height:1.6;color:#3D3E43;margin:20px 0 0}
+.sec{padding-top:128px}
+.fig{margin:56px 0 0}
+.fig img{display:block;width:100%;height:auto}
+.goal{padding-top:24px;border-top:2px solid #2F6B57}
+.prog{position:fixed;top:0;left:0;right:0;height:4px;background:#2F6B57;transform-origin:left;transform:scaleX(0);z-index:5}
+.fade{animation:fadeup .9s cubic-bezier(.2,.75,.1,1) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.am{width:100%;border-collapse:collapse;table-layout:fixed}
+.am th{color:#2F6B57;text-align:left;font:700 13px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:0 20px 16px 0;border-bottom:2px solid #2F6B57}
+.am td{vertical-align:top;padding:20px 20px 20px 0;font-size:16px;line-height:1.5;color:#2B2C30;border-bottom:1px solid #DCDCD8}
+.am td:first-child{font-weight:600;color:#111113}
+.steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;position:relative;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding-top:44px;font-size:15px;font-weight:600;line-height:1.3}
+.steps li::before{content:'';position:absolute;top:8px;left:0;width:20px;height:20px;border-radius:50%;background:#2F6B57;border:3px solid #2F6B57;box-sizing:border-box;z-index:1}
+.track{position:absolute;top:17px;left:10px;width:calc(6 * ((100% - 72px) / 7 + 12px));height:3px;background:#2F6B57;transform-origin:left}
+.jwrap{view-timeline-name:--jt}
+.strip{display:flex;gap:40px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 40px 24px;scrollbar-width:thin}
+.strip figure{flex:0 0 auto;scroll-snap-align:center;margin:0}
+.strip img{display:block;height:clamp(260px,30vw,420px);width:auto;max-width:86vw;object-fit:contain}
+.hmw{font-size:clamp(30px,3.8vw,52px);line-height:1.12;letter-spacing:-0.025em;font-weight:600;margin:0;color:#2F6B57}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;color:#F6F6F6;padding:72px 0}
+.next:hover{color:#F6F6F6}.next:hover .arrow{transform:translateX(10px)}
+.arrow{display:inline-block;transition:transform .35s}
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+.track{animation:grow linear both;animation-timeline:--jt;animation-range:cover 20% cover 68%}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.steps li::before{animation:dot linear both;animation-timeline:--jt}
+@keyframes dot{from{background:#F6F6F6}to{background:#2F6B57}}
+.steps li:nth-child(1)::before{animation-range:cover 20.0% cover 21.0%}.steps li:nth-child(2)::before{animation-range:cover 28.0% cover 29.0%}.steps li:nth-child(3)::before{animation-range:cover 36.0% cover 37.0%}.steps li:nth-child(4)::before{animation-range:cover 44.0% cover 45.0%}.steps li:nth-child(5)::before{animation-range:cover 52.0% cover 53.0%}.steps li:nth-child(6)::before{animation-range:cover 60.0% cover 61.0%}.steps li:nth-child(7)::before{animation-range:cover 68.0% cover 69.0%}
+@media (max-width:900px){.track{animation-name:growY}@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}}
+.prog{animation:prog linear both;animation-timeline:scroll(root)}
+@keyframes prog{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-width:900px){.steps{grid-template-columns:1fr;gap:0}.steps li{padding:0 0 22px 40px}.steps li::before{top:0}.track{top:10px;bottom:32px;left:9px;right:auto;width:3px;height:auto;transform-origin:top}.amwrap{overflow-x:auto}.am{min-width:720px}}
+@media (max-width:900px){.wf{grid-template-columns:1fr!important}}
+@media (max-width:640px){.wrap{padding:0 20px}.strip{padding:8px 20px 24px}}
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="font-family: sans-serif; padding: 40px">This site needs JavaScript turned on. You can reach Darryl at <a href="mailto:darrylh1301@gmail.com">darrylh1301@gmail.com</a>.</p></noscript></div>
+<script type="module" src="/js/diversihire.js"></script>
+</body>
+</html>

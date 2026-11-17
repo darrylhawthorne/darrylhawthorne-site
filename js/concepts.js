@@ -7,7 +7,6 @@ const TEMPLATE = (v) => html`<div class="dh" style="min-height: 100vh; backgroun
 
 <header class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; flex-wrap: wrap">
 <a href="/" class="disp" style="text-decoration: none; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 10px; min-height: 44px">
-<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 7.2 7.4.3-5.8 4.6 2 7.3L12 16.7l-6.2 4.2 2-7.3L2 9l7.4-.3z" fill="#2340E0"></path></svg>
 Darryl Hawthorne</a>
 <nav aria-label="Primary" style="display: flex; gap: 20px; flex-wrap: wrap">
 <a class="navlink" href="/#work">Work</a>

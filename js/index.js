@@ -8,9 +8,8 @@ const TEMPLATE = (v) => html`<div class=${v.rootCls}>
 <div class="cur-dot" ref=${v.dotRef} aria-hidden="true"></div>
 <div class=${v.ringCls} ref=${v.ringRef} aria-hidden="true"><span>${v.curLabel}</span></div>
 
-<header class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; flex-wrap: wrap">
-<a href="/" class="disp" style="text-decoration: none; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #F2F2EF">
-<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 7.2 7.4.3-5.8 4.6 2 7.3L12 16.7l-6.2 4.2 2-7.3L2 9l7.4-.3z" fill="#8EA0FF"></path></svg>
+<header class="wrap site-head" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; flex-wrap: wrap">
+<a href="/" class="disp brand" style="text-decoration: none; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #F2F2EF">
 Darryl Hawthorne</a>
 <nav aria-label="Primary" style="display: flex; gap: 20px; flex-wrap: wrap">
 <a class="navlink" href="#work">Work</a>
@@ -22,9 +21,9 @@ Darryl Hawthorne</a>
 
 <main>
 <section class="wrap hero" aria-labelledby="hero-title">
-<div>
-<p class="fade muted" style="margin: 0 0 28px; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px; animation-delay: .1s">
-<span style="width: 10px; height: 10px; border-radius: 50%; background: #2BC275; box-shadow: 0 0 0 4px rgba(43,194,117,.2)"></span>
+<div class="hl">
+<p class="fade muted eyebrow" style="margin: 0 0 28px; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px; animation-delay: .1s">
+<span class="pulse" aria-hidden="true"></span>
 Product designer · Open to internships and new grad roles</p>
 <h1 id="hero-title" class="disp" style="margin: 0; font-size: clamp(46px, 6.6vw, 100px); line-height: 1.0; letter-spacing: -0.035em; font-weight: 600">
 <span class="w"><span style="animation-delay: .15s">I</span></span>
@@ -35,7 +34,7 @@ Product designer · Open to internships and new grad roles</p>
 <span class="w"><span class="serif" style="animation-delay: .45s; color: #8EA0FF; font-size: 1.12em; line-height: .9">everyday</span></span>
 <span class="w"><span style="animation-delay: .51s">frustrations.</span></span>
 </h1>
-<p class="fade" style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 1.55; color: #C9C9CD; animation-delay: .8s">I'm a product designer and UX Design student at Wilfrid Laurier University. I start with what bugs people, research why, and design until the result shows up in the numbers.</p>
+<p class="fade lead" style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 1.55; color: #C9C9CD; animation-delay: .8s">I'm a product designer and UX Design student at Wilfrid Laurier University. I start with what bugs people, research why, and design until the result shows up in the numbers.</p>
 <dl class="stats fade" style="animation-delay: 1s">
 <div><dt>Client conversion lift</dt><dd><span class="disp">${v.n1}%</span> in 8 days</dd></div>
 <div><dt>Idea to App Store</dt><dd><span class="disp">${v.n2}</span> months</dd></div>
@@ -43,7 +42,7 @@ Product designer · Open to internships and new grad roles</p>
 </dl>
 </div>
 
-<div class="fade" style="animation-delay: .6s">
+<div class="fade hp" style="animation-delay: .6s">
 <div class="phone" role="group" aria-label="Try a Sortit style cleanup: keep or delete each photo">
 <div class="screen">
 <img class="head" src="/assets/cefb81abebd9.png" alt="Sortit swipe mode: Recents" />
@@ -63,14 +62,14 @@ ${v.finished ? html`<div class="done"><img src="/assets/b1996bb85386.png" alt=""
 </div>
 </section>
 
-<div aria-hidden="true" style="overflow: hidden; border-top: 1px solid #2A2A2E; border-bottom: 1px solid #2A2A2E; padding: 20px 0">
+<div class="marqwrap" aria-hidden="true" style="overflow: hidden; border-top: 1px solid #2A2A2E; border-bottom: 1px solid #2A2A2E; padding: 20px 0">
 <div class="marq">
 <span class="serif" style="padding-right: 56px; white-space: nowrap; font-size: 30px; color: #C9C9CD">User research ✦ Usability testing ✦ Wireframing ✦ Prototyping ✦ Interaction design ✦ Information architecture ✦ Design systems ✦ Figma ✦ Framer ✦ Journey mapping ✦ Visual design ✦</span>
 <span class="serif" style="padding-right: 56px; white-space: nowrap; font-size: 30px; color: #C9C9CD">User research ✦ Usability testing ✦ Wireframing ✦ Prototyping ✦ Interaction design ✦ Information architecture ✦ Design systems ✦ Figma ✦ Framer ✦ Journey mapping ✦ Visual design ✦</span>
 </div>
 </div>
 
-<section id="work" class="wrap wide" style="padding-top: 128px" aria-labelledby="work-title">
+<section id="work" class="wrap wide sec" style="padding-top: 128px" aria-labelledby="work-title">
 <div style="display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px">
 <h2 id="work-title" class="disp" style="margin: 0; font-size: clamp(40px, 5.4vw, 72px); letter-spacing: -0.035em; font-weight: 600; line-height: 1">Selected <span class="serif" style="font-size: 1.1em">work</span></h2>
 <p class="muted" style="margin: 0; font-size: 16px">2025 to 2026</p>
@@ -98,7 +97,7 @@ ${v.finished ? html`<div class="done"><img src="/assets/b1996bb85386.png" alt=""
 </div>
 </section>
 
-<section class="wrap wide" style="padding-top: 160px" aria-labelledby="more-title">
+<section class="wrap wide sec" style="padding-top: 160px" aria-labelledby="more-title">
 <div class="split">
 <div class="panel" aria-hidden="true">
 <div class="meta"><span>Waterloo, ON</span><span>${v.clock}</span></div>
@@ -118,7 +117,7 @@ ${v.finished ? html`<div class="done"><img src="/assets/b1996bb85386.png" alt=""
 </div>
 </section>
 
-<section id="about" class="wrap" style="padding-top: 144px; padding-bottom: 128px" aria-labelledby="about-title">
+<section id="about" class="wrap sec" style="padding-top: 144px; padding-bottom: 128px" aria-labelledby="about-title">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px">
 <div class="reveal">
 <h2 id="about-title" class="disp" style="margin: 0; font-size: clamp(40px, 5.4vw, 72px); letter-spacing: -0.035em; font-weight: 600; line-height: 1"><span class="serif" style="font-size: 1.1em">About</span></h2>
@@ -140,10 +139,10 @@ ${v.finished ? html`<div class="done"><img src="/assets/b1996bb85386.png" alt=""
 </main>
 
 <footer id="contact" style="border-top: 1px solid #2A2A2E">
-<div class="wrap" style="padding-top: 120px; padding-bottom: 48px">
+<div class="wrap sec" style="padding-top: 120px; padding-bottom: 48px">
 <p class="reveal muted" style="margin: 0; font-size: 16px">Have a role, a project or a hard problem?</p>
 <p class="disp reveal" style="margin: 20px 0 0; font-size: clamp(26px, 6.4vw, 88px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; overflow-wrap: anywhere"><a class="mail" href="mailto:darrylh1301@gmail.com">darrylh1301@gmail.com</a></p>
-<div style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 120px; padding-top: 28px; border-top: 1px solid #2A2A2E; font-size: 15px" class="muted">
+<div class="foot" style="display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 120px; padding-top: 28px; border-top: 1px solid #2A2A2E; font-size: 15px" class="muted">
 <span>© 2026 Darryl Hawthorne</span>
 <nav aria-label="Elsewhere" style="display: flex; gap: 24px; flex-wrap: wrap">
 <a class="navlink" href="https://www.linkedin.com/in/darryl-hawthorne/">LinkedIn</a>
